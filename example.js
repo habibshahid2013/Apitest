@@ -9,11 +9,15 @@ function fetchData(){
     }).then( data => {
         console.log(data.data);
         const html = data.data.map(user => {
-            return `<p> Name: ${user.first_name}</p>`
-        })
+            return `
+            <div class="user">
+            <p> Name: ${user.first_name}</p>
+            <p> Email: ${user.email}</p>
+            </div>`
+        }).join('')
         console.log(html);
         document.querySelector('#app')
-        .insertAdjacentHTML("afterbegin","<h1>hellooo</h1>")
+        .insertAdjacentHTML("afterbegin", html )
     }).catch(error => {
         console.log(error);
     });
