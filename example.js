@@ -11,6 +11,7 @@ function fetchData(){
         const html = data.data.map(user => {
             return `
             <div class="user">
+            <p><img src="${user.avatar}" alt="${user.first_name}"/></p>
             <p> Name: ${user.first_name}</p>
             <p> Email: ${user.email}</p>
             </div>`
