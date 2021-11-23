@@ -11,6 +11,7 @@ function fetchData(){
         const html = data.data.map(user => {
             return `<p> Name: ${user.first_name}</p>`
         })
+        console.log(html);
         document.querySelector('#app')
         .insertAdjacentHTML("afterbegin","<h1>hellooo</h1>")
     }).catch(error => {
